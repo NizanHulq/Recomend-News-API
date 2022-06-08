@@ -49,7 +49,7 @@ class ArticleController extends Controller
 
     public function delete($id)
     {
-        Article::findOrFail($id)->delete();
+        Article::find($id)->delete();
         return "Data berhasil dihapus";
     }
 }

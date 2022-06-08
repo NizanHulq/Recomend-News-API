@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/view', 'ViewController@index')->name('view');
+Route::get('/view/create', 'ViewController@create')->name('create');
+Route::post('/view/store', 'ViewController@store')->name('store');
+Route::get('/view/{id}', 'ViewController@show')->name('show');
+Route::get('/view/{id}/edit', 'ViewController@edit')->name('edit');
+Route::put('/view/{id}/update', 'ViewController@update')->name('update');
+Route::get('/view/{id}/delete', 'ViewController@delete')->name('delete');
