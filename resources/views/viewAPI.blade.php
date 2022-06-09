@@ -20,43 +20,49 @@
     </style>
 </head>
 
-<button>
+<!-- <button>
     <a href="{{ route('create') }}">Add Articles</a>
-</button>
+</button> -->
 
 <body>
-    <!-- <table>
-        <thead>
-            <tr>
-                <th>Author</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Url</th>
-                <th>UrlToImage</th>
-                <th>PublishedAt</th>
-                <th>Content</th>
-                <th>aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($articles as $article)
-            <tr>
-                <td>{{ $article['author'] }}</td>
-                <td>{{ $article['title'] }}</td>
-                <td>{{ $article['description'] }}</td>
-                <td>{{ $article['url'] }}</td>
-                <td>{{ $article['urlToImage'] }}</td>
-                <td>{{ $article['publishedAt'] }}</td>
-                <td>{{ $article['content'] }}</td>
-                <td>
-                    <a href="{{ route('edit', $article['id']) }}">Edit</a>
-                    <a href="{{ route('delete', $article['id']) }}">Delete</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table> -->
     <div class="container-fluid">
+        <div class="p-5">
+            <h2>Rekomendasi Berita</h2>
+            <a href="{{ route('create') }}" class="btn btn-success mb-2">Add Articles +</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Url</th>
+                        <th>UrlToImage</th>
+                        <th>PublishedAt</th>
+                        <th>Content</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($articles as $article)
+                    <tr>
+                        <td>{{ $article['author'] }}</td>
+                        <td>{{ $article['title'] }}</td>
+                        <td>{{ $article['description'] }}</td>
+                        <td>{{ $article['url'] }}</td>
+                        <td>{{ $article['urlToImage'] }}</td>
+                        <td>{{ $article['publishedAt'] }}</td>
+                        <td>{{ $article['content'] }}</td>
+                        <td>
+                            <a href="{{ route('edit', $article['id']) }}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="{{ route('delete', $article['id']) }}" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="container-fluid">
         <div class="p-5">
             <h2>Rekomendasi Berita</h2>
             <a href="{{ route('create') }}" class="btn btn-success mb-2">Add Articles +</a>
@@ -80,7 +86,7 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
